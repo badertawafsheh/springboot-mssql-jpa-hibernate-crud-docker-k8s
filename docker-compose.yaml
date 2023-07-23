@@ -4,6 +4,8 @@ services:
   mssql:
     container_name: springboot-db-test
     image: "mcr.microsoft.com/mssql/server:2019-latest"
+    build:
+      context: mssql
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Docker123!@
@@ -20,7 +22,7 @@ services:
     depends_on:
       - mssql
     environment:
-      spring.datasource.url: jdbc:sqlserver://springboot-db-test:1433;databaseName=employees;encrypt=true;trustServerCertificate=true;
+      spring.datasource.url: jdbc:sqlserver://springboot-db-test:1433;databaseName=master;encrypt=true;trustServerCertificate=true;
     networks:
       - springboot-mysql-net
 

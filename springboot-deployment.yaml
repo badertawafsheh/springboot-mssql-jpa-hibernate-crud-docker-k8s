@@ -19,7 +19,7 @@ spec:
             - containerPort: 8080
           env:
             - name: spring.datasource.url
-              value: jdbc:sqlserver://springboot-db-test-service:1433;databaseName=employees;encrypt=true;trustServerCertificate=true;
+              value: jdbc:sqlserver://springboot-db-test-service:1433;databaseName=master;encrypt=true;trustServerCertificate=true;
           readinessProbe:   
             tcpSocket:
               port: 1433
